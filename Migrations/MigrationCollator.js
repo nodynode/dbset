@@ -1,14 +1,6 @@
 const MigrationTable = require("MigrationTable")
 
 class MigrationCollator {
-	static parse(json) {
-		var tableJSON = JSON.parse(json);
-		var table = new MigrationTable(tableJSON.name);
-
-		for (var i = 0, column; column = tableJSON.structure[i]; i++)
-			table.addColumn(column);
-
-	}
 
 	static equals(dbTable, newTable) {
 		return newTable.uid == dbTable.uid;
